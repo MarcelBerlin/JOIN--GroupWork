@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Join</title>
+    <link rel="icon" type="image/x-icon" href="./img/logoBg.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src='./javascript/script.js'></script>
+    <script src='./javascript/mini_backend.js'></script>
+</head>
+
+
+<body onload="initStart()"  class="loginBody">
+
+    <div class="startpage">
+        <div class="startheadline">
+            <img src="./img/logoBg.png">
+        </div class="startheadline">
+
+        <div class="startMainpage">
+            <form method="post" class="login">
+                <p>Log in</p>
+                <div>
+                    <input class="borderOutline" type="text" id="loginInputFirstName" placeholder="First Name" required>
+                    <input class="borderOutline" type="text" id="loginInputLastName" placeholder="Last Name" required>
+                    <input class="borderOutline" type="password" id="loginInputPassword" placeholder="Password" required>
+                </div>
+                <div id="loginFailed" class="d-none">
+                    <span>Login failed! Please try again</span>
+                </div>
+                <div>
+                    <button type="button" onclick="login()" id="loginButton">Login</button>
+                    <a href="addTask.html" onclick="loginAsGuest()" id="loginAsGuestButton">Login as Guest</a>
+                </div>
+            </form>
+            <div class="text">
+                <span>
+                    This site is an educational project and has NO SECURITY. Do not enter any personal or confidential
+                    information!</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>
+                <a href="./imprint.html"><span class="colorSpan">About</span></a>
+                <span>|</span>
+                <a href="./privacy.html"><span class="colorSpan">Privacy</span></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

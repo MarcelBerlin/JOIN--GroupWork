@@ -1,0 +1,846 @@
+/* -----------------------------------Board-----------------------------ks----------------------- */
+
+.tasks {
+    width: 90%;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: 100;
+    background-color: beige;
+    padding: 6px;
+    position: relative;
+    height: 170px;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.tasks:hover {
+    cursor: pointer;
+}
+
+.headerAndStatusDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statusText {
+    border-radius: 5px;
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.boardHeadline {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.boardDiv {
+    background-color: rgb(241, 241, 241);
+    height: 80vh;
+    width: 275px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.boardArrangement {
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-top: 15px;
+    margin-bottom: 18px;
+    width: 85vw;
+}
+
+.barStyle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px;
+}
+
+.dateCreated {
+    color: rgb(32, 49, 146);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.dateCreated span {
+    margin-left: 5px;
+}
+
+.dragAreaHighlight {
+    background-color: rgb(200, 200, 200);
+    transition: all 225ms ease-in-out;
+}
+
+.profileImgTaks {
+    height: 20px;
+    border-radius: 100%;
+    padding: 2px;
+    background-color: #203192;
+}
+
+.dateOnTask {
+    font-size: 16px;
+}
+
+.dateAndTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.titleTask {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    max-width: 170px;
+    overflow: auto;
+}
+
+.imgAndDescriptionDiv {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.loardImgUserOnBoard {
+    display: flex;
+}
+
+.task-user-img {
+    height: 30px;
+    width: auto;
+}
+
+.descriptionMini {
+    word-wrap: break-word;
+    line-height: 1rem;
+    font-size: 15px;
+    padding: 2px;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.profileImgTaks {
+    height: 35px;
+    border-radius: 100%;
+    padding: 2px;
+    margin: 2px;
+}
+
+.profileImgTaksOpenTask {
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.overlayBg {
+    transition: transform 250ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(88, 88, 88, 0.9);
+    z-index: 998;
+    filter: opacity(100%);
+    height: 100%;
+    animation: reveal1 225ms ease-in-out;
+}
+
+.exitOpenTask {
+    animation: exitUp 500ms ease-in-out;
+}
+
+.exitBackground {
+    animation: exit 400ms ease-in-out;
+}
+
+#openTask{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.openTask {
+    background-color: lightgray;
+    height: fit-content;
+    padding: 8px;
+    width: 600px;
+    border-radius: 6px;
+    z-index: 998;
+    animation: reveal2 225ms ease-in-out;
+}
+
+.headerOpenTask {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.headerOpenTask span{
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.closeTask {
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+
+.closeTask:hover {
+    cursor: pointer;
+}
+
+.trash {
+    padding: 2px;
+    cursor: pointer;
+}
+
+.trash:hover {
+    background-color: rgb(190, 190, 190);
+    border-radius: 100%;
+}
+
+.header2OpenTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header2OpenTask span{
+    font-weight: normal;
+}
+
+.title {
+    font-size: 25px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow: auto;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.titelAndTaskAndPushToDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(32, 49, 146, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.urgencyDiv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(32, 49, 146);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.urgencyDiv span {
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.textOpenTask {
+    text-align: center;
+    overflow: auto;
+    word-wrap: break-word;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.footerTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(32, 49, 146);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.userImgInOpenTask {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border-radius: 100%;
+    height: 40px;
+    padding: 5px;
+}
+
+.userImgInOpenTask img {
+    border: 2px solid #203192;
+}
+
+.createdAndOptionButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(32, 49, 146, 0.7);
+    border-radius: 5px;
+}
+
+
+.closeAndDeletTaskDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.closeAndDeletTaskDiv img {
+    height: 24px;
+    width: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.showComments {
+    overflow: auto;
+    width: -webkit-fill-available;
+    max-height: 120px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+}
+
+.showComments::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.showComments::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+  
+.showComments::-webkit-scrollbar-thumb {
+    background: #797979;
+    border-radius: 10px;
+}
+
+.descriptionMini::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.descriptionMini::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+  
+.descriptionMini::-webkit-scrollbar-thumb {
+    background: #797979;
+    border-radius: 10px;
+}
+
+.height100 {
+    height: 100px !important;
+}
+
+.showComments span {
+    color: darkslategray;
+}
+
+.deletCommentButton {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 800;
+    border: 1px solid transparent;
+}
+
+.deletCommentButton:hover {
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+.commentsAndDeletComment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.commentImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    border: 2px solid rgb(32, 49, 146);
+}
+
+.comments {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.commentImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+}
+
+.divForTheComments {
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.inputAndSendButton {
+    display: flex;
+    border-radius: 5px;
+}
+
+.sendButtonForTheComments {
+    object-fit: contain;
+    background-color: #5561A5;
+    border-radius: 5px;
+    height: 20px;
+    padding: 4px;
+}
+
+.sendButtonForTheComments:hover {
+    cursor: pointer;
+    background-color: rgb(190, 190, 190);
+}
+
+.inputAndSendButton {
+    border-radius: 5px;
+}
+
+.inputStyleComments {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 200px;
+}
+
+.closeAndDeletTaskDiv img {
+    object-fit: contain;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pushTo {
+    cursor: pointer;
+}
+
+.pushTo:hover {
+    background-color: rgb(190, 190, 190);
+    border-radius: 100%;
+}
+
+.High {
+    border-left: 5px solid rgba(200, 0, 0);
+    transition: all 225ms ease-in-out;
+}
+
+.Medium {
+    border-left: 5px solid rgba(201 167 2);
+    transition: all 225ms ease-in-out;
+}
+
+.Low {
+    border-left: 5px solid rgba(65, 170, 30);
+    transition: all 225ms ease-in-out;
+}
+
+.color_High {
+    color: rgba(200, 0, 0);
+    transition: all 225ms ease-in-out;
+}
+
+.color_Medium {
+    color: rgba(201 167 2);
+    transition: all 225ms ease-in-out;
+}
+
+.color_Low {
+    color: rgba(65, 170, 30);
+    transition: all 225ms ease-in-out;
+}
+
+@keyframes reveal2 {
+    0% {
+        margin-top: -200px;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes exit {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes exitUp {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    75% {
+        opacity: 0.25;
+    }
+
+    100% {
+        margin-bottom: -200px;
+        opacity: 0;
+    }
+}
+
+@media(max-width: 1440px) {
+
+    .boardBarResponsiv {
+        height: auto;
+    }
+
+    .boardArrangement {
+        flex-wrap: nowrap;
+    }
+
+    .boardDiv {
+        width: 250px;
+    }
+
+    .tasks {
+        width: 87.5%;
+    }
+
+    .titleTask {
+        max-width: 140px;
+    }
+
+    .profileImgTaks {
+        height: 30px;
+    }
+    
+    .dateOnTask {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 1325px){
+    .boardDiv {
+        width: 230px;
+    }
+}
+
+@media(max-width: 1190px){
+    .boardDiv {
+        width: 220px;
+    }
+}
+
+@media(max-width: 1160px) {
+    .tasks {
+        width: 87%;
+    }
+}
+
+@media(max-width: 1146px){
+    .boardDiv {
+        width: 200px;
+    }
+
+    .tasks {
+        width: 86%;
+    }
+}
+
+
+@media (max-width: 1065px) {
+    .boardDiv {
+        width: 180px;
+    }
+
+    .tasks {
+        width: 85%;
+    }
+
+    .boardArrangement{
+        width: 82vw;
+    }
+
+}
+
+@media (max-width: 930px){
+    .boardDiv {
+        width: 170px;
+    }
+
+    .tasks {
+        width: 84%;
+    }
+
+    .titleTask{
+        font-size: 14px;
+    }
+
+    .descriptionMini{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 860px) {
+    .boardArrangement{
+        width: 80vw;
+        flex-direction: column;
+        margin-left: 140px;
+    }
+    .boardDiv {
+        width: 75vw;
+        height: 300px;
+    }
+
+    .tasks {
+        width: 95%;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .boardArrangement {
+        width: 98vw;
+        margin-left: 0px;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+
+    .boardDiv {
+        width: 600px;
+    }
+
+    .tasks  {
+        width: 95.5%;
+    }
+} 
+
+@media (max-width: 670px) {
+    
+    .boardDiv {
+        width: 600px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .openTask {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    
+    .boardDiv {
+        width: 550px;
+    }
+
+    .tasks  {
+        width: 94.5%;
+    }
+}
+
+@media (max-width: 570px) {
+    
+    .boardDiv {
+        width: 480px;
+    }
+
+    .tasks  {
+        width: 94%;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .boardDiv {
+        width: 400px;
+    }
+
+    .tasks {
+        width: 93%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .statusResponsiv {
+        height: 34px;
+        position: absolute;
+        top: 6px;
+        left: 11px;
+        bottom: 0;
+        right: 0;
+        z-index: 900;
+    }
+
+    .closeAndDeletTaskDiv img  {
+        width: 20px;
+        height: 20px;
+    }
+
+    .openTask{
+        height: 80vh;
+    }
+
+    .titelAndTaskAndPushToDiv{
+        height: 30%;
+        justify-content: start;
+    }
+
+    .textOpenTask{
+        max-height: 60%;
+    }
+}
+
+@media (max-width: 410px) {
+
+    .boardDiv {
+        width: 300px;
+    }
+
+    .tasks {
+        width: 90%;
+    }
+}
+
+@media (max-width: 335px) {
+
+    .inputAndSendButton {
+        display: flex;
+        align-items: center;
+    }
+
+    .sendButtonForTheComments {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 330px) {
+
+    .boardDiv {
+        width: 280px;
+    }
+
+    .dateOnTask {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .boardDiv {
+        width: 260px;
+    }
+
+    .titleTask {
+        max-width: 140px;
+    }
+
+    .tasks {
+        width: 89%;
+    }
+
+    .dateCreated {
+        font-size: 15px;
+    }
+
+    .urgencyDiv {
+        font-size: 15px;
+    }
+
+    .footerTask {
+        font-size: 15px;
+    }
+
+    .statusText {
+        font-size: 20px;
+    }
+
+    .statusResponsiv {
+        top: 16px;
+    }
+}

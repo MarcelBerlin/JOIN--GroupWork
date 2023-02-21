@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Join</title>
+    <link rel="icon" type="image/x-icon" href="./img/logoBg.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src='./javascript/script.js'></script>
+
+
+    <style>
+        .imprintBg {
+            height: 90vh;
+            margin-left: 10%;
+            word-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .imprintBg h1 {
+            margin-top: 50px;
+        }
+
+        .imprintContent {
+            display: flex;
+            align-items: center;
+        }
+
+        .imprintContent-right {
+            margin-left: 15%;
+        }
+
+        .imprintContent-right div {
+            margin-bottom: 32px;
+        }
+
+        .imprintContent-left div {
+            margin-bottom: 32px;
+        }
+
+        .imprintBg p {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .imprintBg span {
+            display: flex;
+        }
+
+        .imprintBg img {
+            margin-right: 12px;
+        }
+
+        .imprintBg a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            margin-left: 5px;
+            margin-right: 5px;
+            color: rgb(99, 99, 99);
+        }
+
+        .imprintBg a:hover {
+            color: rgb(94, 0, 216);
+            transition: all 225ms ease-in-out;
+        }
+
+        .reference {
+            margin-top: 64px;
+        }
+
+        @media (max-width: 860px) {
+
+            body {
+                overflow: auto;
+            }
+
+            .imprintContent {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .imprintContent-right {
+                margin: 0;
+            }
+
+            .reference {
+                margin-bottom: 60px;
+                margin-top: 10px;
+            }
+
+            .imprintBg {
+                height: 100vh;
+            }
+
+            .imprintContent-left div {
+                margin-bottom: 5px;
+            }
+
+            .imprintContent-right div {
+                margin-bottom: 5px;
+            }
+
+            .footer div {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-height: 820px) {
+
+            .imprintBg h1 {
+                margin: 0;
+            }
+        }
+
+        @media (max-height: 750px) {
+
+            body {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-height: 650px) {
+
+            body {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 490px) {
+
+            .reference {
+                margin-bottom: 80px;
+            }
+
+            .imprintBg {
+                display: flex;
+            }
+
+            .reference {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .imprintBg a {
+                margin: 2px;
+            }
+
+            .imprintBg p {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="logo">
+        <div class="logo-links">
+            <div>
+                <a href="./index.html" title="back to login"><img src="./img/logo.png"></a>
+            </div>
+            <div class="logo-links-right">
+                <a href="./imprint.html">About</a>
+                <a href="./privacy.html">Privacy</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="imprintBg">
+        <h1>About Join Ldt.</h1>
+        <div class="imprintContent">
+            <div class="imprintContent-left">
+                <div>
+                    <p>Join Ldt.</p>
+                    <span>Backplaumenallee 19</span>
+                    <span>1234 Eckstein</span>
+                    <span>Deutschland</span>
+                </div>
+
+                <div>
+                    <p>Contact</p>
+                    <a href="tel:+8002255883"><img src="./img/phone.ico">+8002255883</a>
+                    <a href="mailto:join@info.com"><img src="./img/mail.ico">join@info.com</a>
+                    <a href="index.html"><img src="./img/internet.ico">www.join.de</a>
+                </div>
+
+                <div>
+                    <p>Authorized Managing Directors</p>
+                    <span>Fabian Flegler</span>
+                    <span>Marcel Berlin</span>
+                    <span>Oda Schneider</span>
+                </div>
+            </div>
+            <div class="imprintContent-right">
+                <div>
+                    <p>Registration Number</p>
+                    <span>HRB 9999</span>
+                </div>
+
+                <div>
+                    <p>Registry Court</p>
+                    <span>Ag Eckstein</span>
+                </div>
+
+                <div>
+                    <p>Sales tax identification number according to §27a sales tax law</p>
+                    <span>DE 97795523148</span>
+                </div>
+            </div>
+        </div>
+
+        <span class="reference">Logos come from <a href="https://icons8.com"> https://icons8.com </a>among others</span>
+    </div>
+    
+
+</body>
+
+</html>

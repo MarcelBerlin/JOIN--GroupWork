@@ -1,0 +1,504 @@
+/* -----------------------------------Add Task---------------------------------------------------- */
+
+.addTaskBg {
+    background-color: #F4F2FB;
+    margin-left: 150px;
+    margin-top: 16px;
+    height: 82.5vh;
+    width: calc(100% - 170px);
+    border-radius: 15px;
+}
+
+.addTask {
+    display: flex;
+    height: 100%;
+}
+
+.addTask h3 {
+    text-transform: uppercase;
+    color: #203192;
+    font-size: 14px;
+}
+
+.addTask input {
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 24px;
+    width: 90%;
+    padding: 5px;
+    color: #575757;
+}
+
+.columnLeft{
+    width: calc(50% - 64px);
+    margin: 4px 32px;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.columnRight{
+    width: calc(50% - 64px);
+    margin: 4px 32px;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    margin-bottom: 12px;
+}
+
+input[type="date" i] {
+    color: #575757;
+    cursor: pointer;
+}
+
+.addTask select {
+    outline: none;
+    border: 1px solid lightgray;
+    width: 93%;
+    height: 36px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #575757;
+    cursor: pointer;
+}
+
+.columnLeft textarea {
+    outline: none;
+    resize: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 90%;
+    height: 100px;
+    padding: 10px 5px;
+    color: #575757;
+}
+
+.assigneToAccount {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.editUserBacklog {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    overflow-x: auto;
+    height: auto;
+}
+
+.editUserBacklog img{
+    border-radius: 100px;
+    border: 2px solid lightgray;
+}
+
+.assigneToAccount img {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+#assignedAccount{
+    display: flex;
+    align-items: center;
+}
+
+#assignedAccount img{
+    border-radius: 100%;
+    margin-left: 8px;
+    border: 3px solid #2e46cf;
+    background-color: #2e46cf;
+}
+
+.container p{
+    color: rgb(204, 0, 0);
+    font-size: 14px;
+}
+
+#addUser{
+    width: 32px;
+    height: 32px;
+}
+
+.user{
+    display: flex;
+    width: 78%;
+    overflow: auto;
+    height: 75px;
+    margin-left: 10px;
+}
+
+.user img{
+    background-color: lightgray;
+    border-radius: 100%;
+    padding: 3px;
+    width: 45px !important;
+    height: 45px !important;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: scale-in 225ms ease-in-out;
+    transform-origin: 0% 
+}
+
+.user img:hover {
+    background-color: rgb(32, 49, 146);
+}
+
+.showUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    transition: all 100ms ease-in-out;
+}
+
+.showUser:hover{
+    transform: scale(1.1);
+}
+
+.showUser p{
+    color: #575757;
+    margin: unset;
+    font-size: 12px;
+}
+
+.editUserButton{
+    color:#2e46cf;
+    font-size: 13px !important;
+    width: 70px;
+    cursor: pointer;
+    padding: unset;
+    text-align: left;
+}
+
+.editUserButton:hover {
+    color: #2e46cf;
+    transform: scale(1.1);
+    transition: all 75ms ease-in-out;
+}
+
+.addTask button {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.addTaskButtonLine {
+    display: flex;
+    justify-content: end;
+    width: 93%;
+    margin-bottom: 18px;
+    margin-top: 92px;
+}
+
+.cancelTaskButton {
+    color: #203192;
+    margin-right: 16px;
+}
+
+.cancelTaskButton {
+    color: #203192;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cancelTaskButton:hover {
+    color: #2e46cf;
+    transform: scale(1.1);
+    transition: all 75ms ease-in-out;
+}
+
+.createTaskButton {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #203192;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 75ms ease-in-out;
+}
+
+.createTaskButton:hover {
+    background-color: #2e46cf;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    transition: all 75ms ease-in-out;
+}
+
+.dialogBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.newUserContent{
+    max-width: 30%;
+    background-color: white;
+    border: 2px solid #203192;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+    position: relative;
+    padding: 50px;
+}
+
+.newUserContent h3{
+    color:#203192;
+    margin-bottom: 32px 64px;
+}
+
+.newUserContent input{
+    outline: none;
+    width: 100%;
+    padding: 8px;   
+    margin-bottom: 24px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: #575757; 
+}
+
+.newUserContent div{
+    display: flex;
+    align-items: center;
+}
+
+.newUserContent button{
+    background-color: #2e46cf;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 32px;
+}
+
+.editUserContent{
+    width: 40%;
+    height: 50%;
+    background-color: white;
+    border: 2px solid #203192;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    overflow: auto;
+    position: relative;
+}
+
+.editUsers{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    position: relative;
+    top: 32px;
+    left: 64px;
+    right: 64px;
+    bottom: 32px;
+}
+
+.editUsersIcon{
+    margin-right: 16px;
+}
+
+.x-mark{
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.editUsersImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: #203192;
+    margin-right: 16px;
+}
+
+.editUsers span{
+    cursor: pointer;
+    color: #203192;
+    margin-right: 16px;
+}
+
+/* ----------------animation------------------- */
+
+@keyframes scale-in{
+    0% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+
+/* ----------------- responsive --------------- */
+
+@media(max-width: 900px){
+    .editUserContent{
+        width: 50%;
+    }
+
+    .user img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .showUser p{
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 720px){
+
+    .addTaskBg{
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-top: 14px;
+        width: auto;
+    }
+
+    .headline{
+        margin-left: 14px !important;
+    }
+    
+    .editUsers{
+        left: 32px;
+    }
+
+    .editUserContent{
+        width: 60%;
+    }
+
+    .responsiveMainPage{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width: 600px){
+    .headline h1{
+        font-size: 22px !important;
+    }
+
+    .headline span{
+        font-size: 14px;
+    }
+
+    .container{
+        margin: unset;
+    }
+
+    .addTask h3{
+        font-size: 14px;
+    }
+
+    .addTask input{
+        height: 24px;
+    }
+
+    .columnLeft textarea{
+        height: 64px;
+    }
+
+    .addTask select{
+        height: 32px;
+    }
+
+    .addTask{
+        flex-direction: column;
+    }
+
+    .columnLeft {
+        width: calc(100% - 64px);
+    }
+
+    .columnRight {
+        width: calc(100% - 64px);
+    }
+
+    .addTaskBg{
+        height: auto;
+        margin-top: 12px;
+        margin-bottom: 26px;
+    }
+
+    .addTaskButtonLine{
+        width: 93%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .editUserContent{
+        width: 70%;
+    }
+
+    .createTaskButton{
+        padding: 8px;
+    }
+}
+
+@media(max-width: 450px){
+
+    .editUserContent{
+        width: 90%;
+    }
+
+    .addTaskBg{
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 350px){
+
+    .editUsers img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .editUsers p{
+        font-size: 14px;
+    }
+
+    .user img {
+        width: 33px !important;
+        height: 33px !important;
+    }
+
+    .addTaskBg{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media(max-height: 630px){
+    .addTaskBg{
+        height: auto;
+    }
+}
+
+@media(min-height: 740px){
+    .columnLeft textarea{
+        height: 200px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Join-header</title>
+    <link rel="icon" type="image/x-icon" href="./img/logoBg.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src='./javascript/script.js'></script>
+    <script src='./javascript/mini_backend.js'></script>
+</head>
+
+<body onload="renderNavbar()">
+    <div id="header" class="header">
+
+        <div class="headerTop">
+
+            <a href="index.html"><img src="./img/logo.png"></a>
+
+            <div class="navbar">
+                <div><a href="board.html">Board</a></div>
+                <div><a href="backlog.html">Backlog</a></div>
+                <div><a href="addTask.html">Add Task</a></div>
+
+                <hr style="width:65%; margin:1.5em">
+
+                <div><a href="./imprint.html" target="_blank">About</a></div>
+                <div><a href="./privacy.html" target="_blank">Privacy</a></div>
+            </div>
+        </div>
+
+        <div class="headerBottom">
+            <div id="activeUser"></div>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+
+    <div id="headerResponsive" class="headerResponsive d-none">
+        <button id="responsiveNavButton" onclick="openResponsiveNav()">
+            <img src="./img/menuResponsive.ico">
+        </button>
+        <div id="responsiveMenu" class="responsiveMenu d-none">
+            <a href="index.html"><img src="./img/logo.png"></a>
+            <div><a href="board.html">Board</a></div>
+            <div><a href="backlog.html">Backlog</a></div>
+            <div><a href="addTask.html">Add Task</a></div>
+            <div><a href="./imprint.html" target="_blank">About</a></div>
+            <div><a href="./privacy.html" target="_blank">Privacy</a></div>
+            <div><a href="index.html">Logout</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
