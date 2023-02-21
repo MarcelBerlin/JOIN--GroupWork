@@ -44,12 +44,12 @@ let guestAccount = [
 
 
 async function initStart() {
-    setURL('https://gruppe-287.developerakademie.net/smallest_backend_ever');
+    setURL('https://marcel-berlin.developerakademie.net/Modul_10/JOIN--GroupWork/smallest_backend_ever');
     await downloadFromServer();
     await loadUser();
 
     if(user.length == 0){
-        setURL('https://gruppe-287.developerakademie.net/smallest_backend_ever');
+        setURL('https://marcel-berlin.developerakademie.net/Modul_10/JOIN--GroupWork/smallest_backend_ever');
         await downloadFromServer();
         await safeUserAccounts();
     }
@@ -57,7 +57,7 @@ async function initStart() {
 
 
 async function init() {
-    setURL('https://gruppe-287.developerakademie.net/smallest_backend_ever');
+    setURL('https://marcel-berlin.developerakademie.net/Modul_10/JOIN--GroupWork/smallest_backend_ever');
     await downloadFromServer();
     await loadData();
     await loadUser();
