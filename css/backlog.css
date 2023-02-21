@@ -322,11 +322,11 @@
 @media(max-width: 900px) {
 
     .backlog-main {
-        width: 99%;        
+        width: 95%;        
     }
 
     .backlog-main-child {
-        height: 20vh;
+        height: 18vh;
         padding: 0;
     }
 

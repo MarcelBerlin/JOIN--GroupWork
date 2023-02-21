@@ -1,4 +1,12 @@
 // ---------------------------Add Task---------------------------------------------------------
+
+
+function dateCheck() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById("date").setAttribute("min", today);
+}
+
+
 function checkValidation(){
     if (assignedUser.length == 0) {
         document.getElementById('alertNoUser').innerHTML = 'Please assigne User';

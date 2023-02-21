@@ -175,7 +175,7 @@
         flex-direction: column;
         margin-top: 29px;
         transition: all 225ms ease-in-out;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0);
         border-radius: 10px;
     }
 

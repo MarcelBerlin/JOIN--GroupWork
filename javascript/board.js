@@ -1,69 +1,23 @@
 // ---------------------------Bord--------------------------------------------------------
 
 
-function renderBoard() {
-    renderToDo();
-    renderInProgress();
-    renderTesting();
-    renderDone();
-}
-
-
-function setId(){
+function setId() {
     for (let i = 0; i < allToDos.length; i++) {
         allToDos[i]['id'] = i;
     }
 }
 
 
-function renderToDo() {
-    let currentToDo = allToDos.filter(t => t['status'] == 'toDo');
-    document.getElementById('toDo').innerHTML = '';
-
-    for (let i = 0; i < currentToDo.length; i++) {
-        let element = currentToDo[i];
-        document.getElementById('toDo').innerHTML += generateTasksHTML(element, i);
-        
-        renderUserForBoard(element, i);
-    }
-}
-
-
-function renderInProgress() {
-    let currentInProgress = allToDos.filter(t => t['status'] == 'inProgress');
-    document.getElementById('inProgress').innerHTML = '';
-
-    for (let i = 0; i < currentInProgress.length; i++) {
-        let element = currentInProgress[i];
-        document.getElementById('inProgress').innerHTML += generateTasksHTML(element, i);
-        
-        renderUserForBoard(element, i);
-    }
-}
-
-
-function renderTesting() {
-    let currentTesting = allToDos.filter(t => t['status'] == 'testing');
-    document.getElementById('testing').innerHTML = '';
-
-    for (let i = 0; i < currentTesting.length; i++) {
-        let element = currentTesting[i];
-        document.getElementById('testing').innerHTML += generateTasksHTML(element, i);
-        
-        renderUserForBoard(element, i);
-    }
-}
-
-
-function renderDone() {
-    let currentDone = allToDos.filter(t => t['status'] == 'done');
-    document.getElementById('done').innerHTML = '';
-    
-    for (let i = 0; i < currentDone.length; i++) {
-        let element = currentDone[i];
-        document.getElementById('done').innerHTML += generateTasksHTML(element, i);
-
-        renderUserForBoard(element, i);
+function renderTasks() {
+    const statuses = ['toDo', 'inProgress', 'testing', 'done'];
+    for (let status of statuses) {
+        let currentTasks = allToDos.filter(t => t['status'] == status);
+        document.getElementById(status).innerHTML = '';
+        for (let i = 0; i < currentTasks.length; i++) {
+            let element = currentTasks[i];
+            document.getElementById(status).innerHTML += generateTasksHTML(element, i);
+            renderUserForBoard(element, i);
+        }
     }
 }
 
@@ -121,42 +75,30 @@ function pushToOtherBoard(id) {
 }
 
 
-function pushToOtherBoardBack(id) {
-    let tasks = allToDos.find(t => t['id'] == id);
-    if (tasks['status'] == 'done') {
-        tasks['status'] = 'testing';
-    } else {
-        if (tasks['status'] == 'testing') {
-            tasks['status'] = 'inProgress';
-        } else {
-            if (tasks['status'] == 'inProgress') {
-                tasks['status'] = 'toDo';
-            }
-        }
-    }
-    closeTask();
-}
-
-
-async function closeTask(){
+async function closeTask() {
     document.body.style.overflow = 'auto';
     document.getElementById('overlayBg').classList.add('d-none');
     document.getElementById('openTask').classList.add('d-none');
     document.getElementById('openTask').classList.remove('exit-ani');
-    await safeData(); 
-    renderBoard();
+    await safeData();
+    renderTasks();
 }
 
 
 function openTask(id) {
     document.body.style.overflow = 'hidden';
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     document.getElementById('overlayBg').classList.remove('d-none');
     document.getElementById('openTask').classList.remove('d-none');
 
     let tasks = allToDos.find(t => t['id'] == id);
     document.getElementById('openTask').innerHTML = generateOpenTaskHTML(tasks, id);
 
+    updateTaskDetails(id, tasks);
+}
+
+
+function updateTaskDetails(id, tasks) {
     renderUserForBoardOpenTask(id);
     renderComments(id, tasks);
     checkPushFunction(tasks, id);
@@ -164,14 +106,14 @@ function openTask(id) {
 }
 
 
-function checkPushFunction(tasks, id){
+function checkPushFunction(tasks, id) {
     if (tasks['status'] == 'done') {
         document.getElementById(`pushToOtherBoard${id}`).classList.add('d-none');
     }
 }
 
 
-function checkPushFunctionBack(tasks, id){
+function checkPushFunctionBack(tasks, id) {
     if (tasks['status'] == 'toDo') {
         document.getElementById(`pushToOtherBoardBack${id}`).classList.add('d-none');
     }
@@ -204,14 +146,14 @@ async function deleteTask(id) {
     assignedUser.splice(id, 1);
     await safeData();
     backToBoard();
-    renderBoard();
+    renderTasks();
 }
 
 
 async function sendComment(id) {
     let commentsOnTheBoard = document.getElementById(`commentsInput${id}`);
 
-    if(commentsOnTheBoard.value.length == 0) {
+    if (commentsOnTheBoard.value.length == 0) {
         alert("Bitte etwas eingeben!");
     } else {
         let tasks = allToDos.find(t => t['id'] == id);
@@ -225,13 +167,13 @@ async function sendComment(id) {
 
 function renderComments(id, tasks) {
     document.getElementById(`showComment${id}`).innerHTML = '';
-    let startComments = tasks['comments'].length -1;
-    for (let j = startComments; j > -1 ; j--) {
+    let startComments = tasks['comments'].length - 1;
+    for (let j = startComments; j > -1; j--) {
         let comment = tasks['comments'][j];
-        document.getElementById(`showComment${id}`).innerHTML += renderCommentsOnTheTask(id, j, comment); 
+        document.getElementById(`showComment${id}`).innerHTML += renderCommentsOnTheTask(id, j, comment);
     }
 }
- 
+
 
 async function deletComment(j, id) {
     let tasks = allToDos.find(t => t['id'] == id);
@@ -245,7 +187,7 @@ async function deletComment(j, id) {
  * DE: Alle funktion ab hier, sind für die Drag and Drop funktion.
  * EN: All functions from here are for the drag and drop function.
  */
- function highlight(id) {
+function highlight(id) {
     document.getElementById(id).classList.add('dragAreaHighlight');
 }
 
@@ -266,5 +208,22 @@ async function moveTo(status) {
     let task = allToDos.find(t => t['id'] == currentDraggedElement);
     task['status'] = status;
     await safeData();
-    renderBoard();
-} 
+    renderTasks();
+}
+
+
+function pushToOtherBoardBack(id) {
+    let tasks = allToDos.find(t => t['id'] == id);
+    if (tasks['status'] == 'done') {
+        tasks['status'] = 'testing';
+    } else {
+        if (tasks['status'] == 'testing') {
+            tasks['status'] = 'inProgress';
+        } else {
+            if (tasks['status'] == 'inProgress') {
+                tasks['status'] = 'toDo';
+            }
+        }
+    }
+    closeTask();
+}

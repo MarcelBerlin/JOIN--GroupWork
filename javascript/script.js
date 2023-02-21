@@ -142,7 +142,7 @@ async function initAddTask() {
 async function initBoard(){
     await init();
     await includeHTML();
-    renderBoard();
+    renderTasks();
 }
 
 
