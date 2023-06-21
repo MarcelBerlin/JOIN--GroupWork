@@ -1,6 +1,5 @@
 // ---------------------------Add Task---------------------------------------------------------
 
-
 function dateCheck() {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById("date").setAttribute("min", today);
@@ -64,16 +63,15 @@ function cancelTask() {
 }
 
 
-async function showUser() {
+async function showUser() {    
     let profil = document.getElementById('user');
     profil.innerHTML = '';
-
     for (let j = 0; j < user.length; j++) {
         let userImg = user[j]['userImg'];
         let firstName = user[j]['first name'].charAt(0).toLocaleUpperCase();
         let lastName = user[j]['last name'].charAt(0).toLocaleUpperCase();
-        profil.innerHTML += templateShowUser(userImg, firstName, lastName, j);
-    }
+        profil.innerHTML += templateShowUser(userImg, firstName, lastName, j);        
+    }      
 }
 
 
@@ -106,7 +104,7 @@ function renderAssignedUser() {
 
 function removeUser(j) {
     assignedUser.splice(j, 1);
-    renderAssignedUser()
+    renderAssignedUser();
 }
 
 
@@ -123,8 +121,7 @@ function closeDialogNewUser() {
     document.body.style.overflow = 'auto';
     document.getElementById('dialogBg').classList.add('d-none');
     document.getElementById('editUserContent').classList.remove('d-none');
-    document.getElementById('newUserContent').innerHTML = '';
-    showUser();
+    document.getElementById('newUserContent').innerHTML = '';       
 }
 
 
@@ -135,6 +132,7 @@ function addNewUser() {
 
     document.getElementById('dialogBg').classList.add('d-none');
     document.getElementById('editUserContent').classList.remove('d-none');
+    
 }
 
 
@@ -147,7 +145,7 @@ function checkForUser(firstName, lastName) {
             found = true;
             break;
         }
-    }
+    }    
     reactIfUserFound(found, firstName, lastName);
 }
 
@@ -168,8 +166,8 @@ async function pushNewUser(firstName, lastName) {
         'userImg': "./img/user-guest.ico"
     }
     user.push(newUser);
-    await safeUser();
-    showUser();
+    await safeUser(); 
+    showUser();   
 }
 
 
@@ -178,7 +176,7 @@ function openDialogEditUser() {
     window.scrollTo(0, 0);
     document.getElementById('dialogBg').classList.remove('d-none');
     document.getElementById('newUserContent').classList.add('d-none');
-    renderEditUser();
+    renderEditUser();    
 }
 
 
@@ -197,7 +195,7 @@ function renderEditUser() {
 async function deleteUser(i) {
     user.splice(i, 1);
     await safeUser();
-    openDialogEditUser();
+    openDialogEditUser();    
 }
 
 
@@ -206,5 +204,5 @@ function closeDialogEditUser() {
     document.getElementById('dialogBg').classList.add('d-none');
     document.getElementById('newUserContent').classList.remove('d-none');
     document.getElementById('editUserContent').innerHTML = '';
-    showUser();
+    showUser();    
 }

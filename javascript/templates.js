@@ -25,15 +25,15 @@ function generateOpenTaskHTML(task, id) {
                 </div>
                 
                 <div class="closeAndDeletTaskDiv">
-                    <div class="closeTask" onclick="backToBoard()"><img class="trash" src="/img/close.png"></div>
+                    <div class="closeTask" onclick="backToBoard()"><img class="trash" src="./img/close.png"></div>
                     <div onclick="deleteTask('${task['id']}')">
-                        <img class="trash" src="/img/müll.png">
+                        <img class="trash" src="./img/müll.png">
                     </div>
                     <div class="pushToDiv" onclick="pushToOtherBoard('${task['id']}')" id="pushToOtherBoard${task['id']}">   
-                        <img class="pushTo" src="/img/arrow.png">
+                        <img class="pushTo" src="./img/arrow.png">
                     </div>
                     <div class="pushToDiv" onclick="pushToOtherBoardBack('${task['id']}')" id="pushToOtherBoardBack${task['id']}">
-                        <img class="pushTo" src="/img/arrow2.png">
+                        <img class="pushTo" src="./img/arrow2.png">
                     </div>
                 </div>
             </div>
@@ -120,8 +120,8 @@ function backlogContainer(i, createdAt, category, title) {
             </div>
         </div>          
         <div class="backlog-send-to">
-            <button class="btn-delete" onclick="deleteBacklogTask(${i})" title="delete Backlog"><img src="../img/müll.png"></button>
-            <button class="btn-send-to-board" onclick="sendToBoard(${i})" title="send to Board"><img src="../img/arrow-up.ico"></button>
+            <button class="btn-delete" onclick="deleteBacklogTask(${i})" title="delete Backlog"><img src="./img/müll.png"></button>
+            <button class="btn-send-to-board" onclick="sendToBoard(${i})" title="send to Board"><img src="./img/arrow-up.ico"></button>
         </div>  
     </div>
     `;
